@@ -1,6 +1,6 @@
 SparkleFormation.new('convert4free').load(:base, :win2k8_ami, :ssh_key_pair, :git_rev_outputs).overrides do
   description <<"EOF"
-MZConvert EC2 instances, configured by Chef. ELB. Route53 record: convert4free.#{ENV['public_domain']}.
+MZConvert EC2 instance. ELB. Route53 record: convert4free.#{ENV['public_domain']}.
 EOF
 
   ENV['sg']                 ||= 'private_sg'
