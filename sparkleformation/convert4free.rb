@@ -32,7 +32,7 @@ EOF
            :policies => [ ],
            :security_groups => _array( attr!(:convert4free_ec2_security_group, 'GroupId') ),
            :idle_timeout => '600',
-           :subnets => registry!(:my_private_subnet_ids),
+           :subnets => registry!(:my_public_subnet_ids),
            :lb_name => ENV['lb_name']
   )
 
