@@ -19,6 +19,7 @@ some stack parameters:
 
 | Parameter | Default Value | Purpose |
 |-----------|---------------|---------|
+| AllowRdpFrom | 127.0.0.1/32 | Lock down remote desktop access to the specified CIDR block |
 | Convert4freeAssociatePublicIpAddress | false | No need to change |
 | Convert4freeDeleteEbsVolumesOnTermination | true | Set to false if you want the EBS volumes to persist when the instance is terminated |
 | Convert4freeDesiredCapacity | 1 | No need to change |
