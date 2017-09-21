@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'sfn'
+gem 'sparkle-pack-aws-availability-zones'
+gem 'sparkle-pack-aws-instance-types',     :git => 'https://github.com/gswallow/sparkle-pack-aws-instance-types.git'
+gem 'sparkle-pack-aws-my-s3-buckets',      :git => 'https://github.com/gswallow/sparkle-pack-aws-my-s3-buckets.git'
+gem 'sparkle-pack-aws-my-security-groups', :git => 'https://github.com/gswallow/sparkle-pack-aws-my-security-groups.git'
+gem 'sparkle-pack-aws-ebs-volumes',        :git => 'https://github.com/gswallow/sparkle-pack-aws-ebs-volumes.git'
+gem 'sparkle-pack-aws-my-subnets',         :git => 'https://github.com/gswallow/sparkle-pack-aws-my-subnets.git'
+gem 'sparkle-pack-aws-my-route53-zones',   :git => 'https://github.com/gswallow/sparkle-pack-aws-my-route53-zones.git'
+gem 'sparkle-pack-cfn-init',               :path => '/Users/gswallow/src/sparkle-pack-cfn-init'
+gem 'sparkle-pack-git-rev-outputs',        :git => 'https://github.com/gswallow/sparkle-pack-git-rev-outputs.git'
