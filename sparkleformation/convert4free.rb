@@ -3,9 +3,7 @@ SparkleFormation.new('convert4free').load(:base, :win2k8_ami, :ssh_key_pair, :gi
 MZConvert EC2 instance. ELB. Route53 record: convert4free.#{ENV['public_domain']}.
 EOF
 
-  ENV['sg']                 ||= 'private_sg'
   ENV['lb_name']            ||= "#{ENV['org']}-#{ENV['environment']}-convert4free-elb"
-  ENV['rdp_ip']             ||= "127.0.0.1/32"
 
   parameters(:vpc) do
     type 'String'
@@ -13,13 +11,22 @@ EOF
     allowed_values array!(registry!(:my_vpc))
   end
 
+  parameters(:allow_rdp_from) do
+    type 'String'
+    allowed_pattern "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})"
+    default ENV.fetch('rdp_ip', '127.0.0.1/32')
+    description 'Network to allow RDP from. Note that the default of 127.0.0.1/32 effectively disables RDP access.'
+    constraint_description 'Must follow IP/mask notation (e.g. 192.168.1.0/24)'
+  end
+
+
   dynamic!(:iam_instance_profile, 'convert4free')
 
   dynamic!(:vpc_security_group, 'convert4free',
            :ingress_rules =>
              [
                { :cidr_ip => '0.0.0.0/0', :ip_protocol => 'tcp', :from_port => '80', :to_port => '80' },
-               { :cidr_ip => ENV['rdp_ip'], :ip_protocol => 'tcp', :from_port => '3389', :to_port => '3389' }
+               { :cidr_ip => ref!(:allow_rdp_from), :ip_protocol => 'tcp', :from_port => '3389', :to_port => '3389' }
              ]
            )
 
