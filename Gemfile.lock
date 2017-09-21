@@ -40,16 +40,17 @@ GIT
       aws-sdk-core (~> 2)
 
 GIT
+  remote: https://github.com/gswallow/sparkle-pack-cfn-init.git
+  revision: 17902a27081a126cb38ba56f47a436b1132716ee
+  specs:
+    sparkle-pack-cfn-init (0.0.1)
+      sparkle_formation
+
+GIT
   remote: https://github.com/gswallow/sparkle-pack-git-rev-outputs.git
   revision: 146e854160fbd15c4ab6e851576756f0c313676a
   specs:
     sparkle-pack-git-rev-outputs (0.0.1)
-
-PATH
-  remote: /Users/gswallow/src/sparkle-pack-cfn-init
-  specs:
-    sparkle-pack-cfn-init (0.0.5)
-      sparkle_formation
 
 GEM
   remote: https://rubygems.org/

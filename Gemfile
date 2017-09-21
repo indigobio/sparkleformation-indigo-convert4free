@@ -8,5 +8,5 @@ gem 'sparkle-pack-aws-my-security-groups', :git => 'https://github.com/gswallow/
 gem 'sparkle-pack-aws-ebs-volumes',        :git => 'https://github.com/gswallow/sparkle-pack-aws-ebs-volumes.git'
 gem 'sparkle-pack-aws-my-subnets',         :git => 'https://github.com/gswallow/sparkle-pack-aws-my-subnets.git'
 gem 'sparkle-pack-aws-my-route53-zones',   :git => 'https://github.com/gswallow/sparkle-pack-aws-my-route53-zones.git'
-gem 'sparkle-pack-cfn-init',               :path => '/Users/gswallow/src/sparkle-pack-cfn-init'
+gem 'sparkle-pack-cfn-init',               :git => 'https://github.com/gswallow/sparkle-pack-cfn-init.git'
 gem 'sparkle-pack-git-rev-outputs',        :git => 'https://github.com/gswallow/sparkle-pack-git-rev-outputs.git'
